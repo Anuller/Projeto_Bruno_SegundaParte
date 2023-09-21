@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class win : MonoBehaviour
 {
-    public GameObject pato, pato2, pato3, pato4, pato5;
+    public gameControllerUI ui;
 
     public GameObject final;
 
+    private void Start()
+    {
+        final.SetActive(false);
+        Time.timeScale = 1f;
+    }
     public void Update()
     {
-        if (pato == null && pato2 == null && pato3 == null && pato4 == null && pato5 == null)
+        if (ui.patosColetados>=5)
         {
             final.SetActive(true);
-            //Time.timeScale = 0f;
-        }
-        else if (pato != null && pato2 != null && pato3 != null && pato4 != null && pato5 != null)
-        {
-            final.SetActive(false);
-            //Time.timeScale = 1f;
+            Time.timeScale = 0f;
         }
     }
 }

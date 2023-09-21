@@ -43,7 +43,7 @@ public class move : MonoBehaviour
 
     private gameControllerUI uiPlayer;
 
-    [SerializeField] private AudioSource audio;
+    private AudioSource som;
 
     #endregion Variaveis
 
@@ -51,7 +51,7 @@ public class move : MonoBehaviour
 
     public void Awake()
     {
-        audio = GetComponent<AudioSource>();
+        som = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -103,7 +103,6 @@ public class move : MonoBehaviour
        if (collsion.collider.CompareTag("dano") == true)
         {
             gameController.GameOver();
-            Time.timeScale = 0f;
         }
 
         if (collsion.collider.CompareTag("ground"))
@@ -120,7 +119,7 @@ public class move : MonoBehaviour
             Destroy(collision.gameObject);
             uiPlayer.patosColetados++;
             uiPlayer.patoText.text = uiPlayer.patosColetados.ToString();
-            audio.Play();
+            som.Play();
         }
     }
 
