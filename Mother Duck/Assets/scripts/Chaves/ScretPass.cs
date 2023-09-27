@@ -10,9 +10,9 @@ public class ScretPass : MonoBehaviour
     public GameObject chave1;
     public GameObject chave2;
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") == true)
+        if (collision.gameObject.tag == "Chaves")
         {
             Debug.Log("Eu colidi");
             Destroy(chave1);
