@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ScretPass : MonoBehaviour
 {
-    
+    //public gamecontroller controller;
+
     public GameObject Porta;
 
     public GameObject chave1;
@@ -16,6 +17,10 @@ public class ScretPass : MonoBehaviour
         {
             Debug.Log("Eu colidi");
             Destroy(chave1);
+        }
+        if (collision.gameObject.tag == "Chaves1")
+        {
+
             Destroy(chave2);
         }
     }
@@ -27,4 +32,6 @@ public class ScretPass : MonoBehaviour
             Destroy(Porta);
         }
     }
+
+
 }
